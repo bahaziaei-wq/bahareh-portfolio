@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bahareh Ziaei — Product Designer</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0F1117;--bg2:#161B27;--bg3:#1E2535;
+  --accent:#4E9EF5;--accent2:#7B5EA7;--teal:#38C9A0;
+  --text:#EEF1F8;--muted:#7A8499;--border:#252D3D;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;overflow-x:hidden}
+
+nav{position:sticky;top:0;z-index:200;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);background:rgba(15,17,23,0.96);backdrop-filter:blur(12px)}
+.nav-logo{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--text);text-decoration:none}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.78rem;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--accent);color:#fff;padding:0.45rem 1.2rem;border-radius:6px;font-size:0.78rem;text-decoration:none;font-weight:500}
+
+.hero{min-height:90vh;display:flex;align-items:center;padding:5rem 3rem 3rem;position:relative;overflow:hidden}
+.c1{position:absolute;width:600px;height:600px;background:var(--accent2);opacity:0.07;border-radius:50%;top:-200px;right:-150px;pointer-events:none}
+.c2{position:absolute;width:300px;height:300px;background:var(--accent);opacity:0.06;border-radius:50%;bottom:-60px;left:5%;pointer-events:none}
+.hero-content{max-width:680px;position:relative;z-index:1}
+.eyebrow{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.6rem}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--accent)}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(3rem,6vw,5.2rem);font-weight:400;line-height:1.05;letter-spacing:-0.02em;margin-bottom:1.4rem}
+h1 .blue{color:var(--accent)}
+h1 .outline{-webkit-text-stroke:1px var(--muted);color:transparent}
+.hero-desc{font-size:1rem;color:var(--muted);max-width:480px;margin-bottom:2rem;line-height:1.8;font-weight:300}
+.hero-actions{display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-p{background:var(--accent);color:#fff;padding:0.75rem 1.75rem;border-radius:6px;text-decoration:none;font-weight:500;font-size:0.9rem}
+.btn-g{border:1px solid var(--border);color:var(--text);padding:0.75rem 1.75rem;border-radius:6px;text-decoration:none;font-size:0.9rem}
+.stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--border)}
+.sn{font-family:'DM Serif Display',serif;font-size:2.2rem}
+.sn em{color:var(--accent);font-style:normal}
+.sl{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:0.1rem}
+
+section{padding:5rem 3rem}
+.slabel{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:0.8rem;display:flex;align-items:center;gap:0.6rem}
+.slabel::before{content:'';width:20px;height:1px;background:var(--accent)}
+h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:400;letter-spacing:-0.02em;line-height:1.1;margin-bottom:2.5rem}
+
+.about{background:var(--bg2)}
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.about p{color:var(--muted);margin-bottom:1rem;font-size:0.95rem;line-height:1.8;font-weight:300}
+.about strong{color:var(--text);font-weight:500}
+.sk-list{display:flex;flex-direction:column;gap:0.9rem;margin-top:1.5rem}
+.sk-row{display:flex;flex-direction:column;gap:0.35rem}
+.sk-lbl{font-size:0.78rem;color:var(--muted);display:flex;justify-content:space-between}
+.sk-bar{height:2px;background:var(--border);border-radius:2px}
+.sk-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent2),var(--accent))}
+.tg{display:grid;grid-template-columns:repeat(2,1fr);gap:0.5rem;margin-top:1.5rem}
+.tt{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:0.5rem 0.9rem;font-size:0.78rem;color:var(--muted);display:flex;align-items:center;gap:0.5rem}
+.td{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.td.t{background:var(--teal)}
+.edu-cards{display:flex;flex-direction:column;gap:0.6rem;margin-top:2rem}
+.edu-card{border:1px solid var(--border);border-radius:8px;padding:0.9rem 1.2rem}
+.edu-name{font-weight:500;font-size:0.88rem}
+.edu-sub{font-size:0.73rem;color:var(--muted);margin-top:0.2rem}
+
+.exp-list{display:flex;flex-direction:column;gap:1px;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.ei{background:var(--bg2);padding:1.75rem 2rem;display:grid;grid-template-columns:150px 1fr;gap:2rem;align-items:start;transition:background 0.2s}
+.ei:hover{background:var(--bg3)}
+.edate{font-size:0.73rem;color:var(--muted);line-height:1.6}
+.eco{font-family:'DM Serif Display',serif;font-size:1.15rem;margin-bottom:0.2rem}
+.erol{font-size:0.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.8rem}
+.ebl{list-style:none;display:flex;flex-direction:column;gap:0.45rem}
+.ebl li{font-size:0.85rem;color:var(--muted);padding-left:1rem;position:relative;line-height:1.6;font-weight:300}
+.ebl li::before{content:'–';position:absolute;left:0;color:var(--accent)}
+
+.projects{background:var(--bg2)}
+.proj-grid{display:grid;grid-template-columns:1fr;gap:1.5rem}
+.proj-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem}
+.proj-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color 0.25s,transform 0.25s;cursor:pointer}
+.proj-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.proj-img{width:100%;height:280px;object-fit:cover;object-position:top;display:block;border-bottom:1px solid var(--border)}
+.proj-grid-2 .proj-img{height:200px}
+.proj-body{padding:1.75rem}
+.proj-tag{font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem}
+.proj-name{font-family:'DM Serif Display',serif;font-size:1.25rem;line-height:1.2;margin-bottom:0.3rem}
+.proj-role{font-size:0.73rem;color:var(--muted);margin-bottom:0.8rem}
+.proj-desc{font-size:0.84rem;color:var(--muted);line-height:1.75;margin-bottom:1rem;font-weight:300}
+.proj-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:0.3rem}
+.ptk{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:0.18rem 0.6rem;font-size:0.67rem;color:var(--muted)}
+.proj-metrics{display:flex;gap:1.25rem;margin-bottom:1rem}
+.mv{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--accent)}
+.ml{font-size:0.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em}
+.view-btn{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:var(--accent);white-space:nowrap}
+
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,15,0.92);z-index:500;overflow-y:auto;padding:2rem}
+.modal-overlay.open{display:block}
+.modal{max-width:900px;margin:0 auto;background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.modal-hero{width:100%;max-height:420px;object-fit:cover;object-position:top;display:block}
+.modal-body{padding:2.5rem 3rem}
+.modal-close{position:fixed;top:1.5rem;right:2rem;background:var(--bg3);border:1px solid var(--border);color:var(--text);width:40px;height:40px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:600;transition:background 0.2s}
+.modal-close:hover{background:var(--accent)}
+.modal-tag{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem}
+.modal-title{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:0.5rem;line-height:1.15}
+.modal-role{font-size:0.8rem;color:var(--muted);margin-bottom:0.5rem}
+.modal-live{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--accent);text-decoration:none;border:1px solid var(--border);padding:0.35rem 0.9rem;border-radius:100px;margin-bottom:2rem;transition:border-color 0.2s}
+.modal-live:hover{border-color:var(--accent)}
+.modal-live::before{content:'↗'}
+.cs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0}
+.cs-block{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.25rem}
+.cs-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.6rem}
+.cs-text{font-size:0.85rem;color:var(--muted);line-height:1.7;font-weight:300}
+.cs-ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.cs-ul li{font-size:0.84rem;color:var(--muted);padding-left:1rem;position:relative;font-weight:300;line-height:1.6}
+.cs-ul li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:0.75rem}
+.cs-section{margin:2rem 0}
+.cs-section-title{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid var(--border)}
+.cs-img{width:100%;border-radius:8px;margin:1rem 0;border:1px solid var(--border)}
+.cs-metrics{display:flex;gap:2rem;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin:1.5rem 0;flex-wrap:wrap}
+.cs-metric-val{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--accent)}
+.cs-metric-lbl{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em;margin-top:0.2rem}
+
+.ps{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:2.5rem}
+.pst{background:var(--bg2);padding:1.75rem 1.25rem;transition:background 0.2s}
+.pst:hover{background:var(--bg3)}
+.psn{font-family:'DM Serif Display',serif;font-size:2.2rem;color:var(--border);margin-bottom:0.75rem;line-height:1}
+.psname{font-weight:600;font-size:0.9rem;margin-bottom:0.4rem}
+.psd{font-size:0.77rem;color:var(--muted);line-height:1.65;font-weight:300}
+
+.contact{background:var(--bg2);text-align:center}
+.cbox{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:3.5rem;max-width:560px;margin:0 auto;position:relative;overflow:hidden}
+.cbox::before{content:'';position:absolute;width:300px;height:300px;background:var(--accent);opacity:0.05;border-radius:50%;top:-120px;right:-100px}
+.ctitle{font-family:'DM Serif Display',serif;font-size:2rem;font-weight:400;margin-bottom:0.75rem}
+.csub{color:var(--muted);margin-bottom:2rem;font-size:0.92rem;font-weight:300}
+.cls{display:flex;gap:0.75rem;justify-content:center;flex-wrap:wrap}
+.cl{display:flex;align-items:center;gap:0.4rem;padding:0.6rem 1.2rem;border:1px solid var(--border);border-radius:6px;color:var(--muted);text-decoration:none;font-size:0.8rem;transition:border-color 0.2s,color 0.2s}
+.cl:hover{border-color:var(--accent);color:var(--text)}
+.cl.p{background:var(--accent);border-color:var(--accent);color:#fff}
+
+footer{padding:1.5rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+footer p{font-size:0.73rem;color:var(--muted)}
+
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  section{padding:3rem 1.5rem}
+  .ag,.proj-grid-2,.cs-grid{grid-template-columns:1fr}
+  .ei{grid-template-columns:1fr}
+  .ps{grid-template-columns:repeat(2,1fr)}
+  .modal-body{padding:1.5rem}
+  footer{flex-direction:column;gap:0.5rem;text-align:center;padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">B<span>.</span>Ziaei</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#exp">Experience</a></li>
+    <li><a href="#proj">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Hire me</a>
+</nav>
+
+<section class="hero">
+  <div class="c1"></div><div class="c2"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Product Designer · Auckland, NZ</p>
+    <h1>Designing<br><span class="blue">products that</span><br><span class="outline">earn trust.</span></h1>
+    <p class="hero-desc">6+ years crafting user-centered digital experiences — from eCommerce platforms to complex admin systems. Research, strategy, and pixel-perfect execution.</p>
+    <div class="hero-actions">
+      <a class="btn-p" href="#proj">View work</a>
+      <a class="btn-g" href="#contact">Get in touch</a>
+    </div>
+    <div class="stats">
+      <div><div class="sn">6<em>+</em></div><div class="sl">Years experience</div></div>
+      <div><div class="sn">40<em>%</em></div><div class="sl">Cart abandonment reduced</div></div>
+      <div><div class="sn">10<em>+</em></div><div class="sl">Products shipped</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="slabel">About me</div>
+  <div class="ag">
+    <div>
+      <h2>Design that works — not just looks good.</h2>
+      <p>I'm Bahareh, a Product Designer with a background in Graphic Design and over 6 years building digital products. I've led design end-to-end — from discovering user pain points to shipping polished, production-ready interfaces.</p>
+      <p>My strength is in <strong>eCommerce UX</strong> — turning complex shopping journeys into clean, conversion-driven experiences. I've redesigned full platforms, built design systems, and run usability tests that led to measurable business impact.</p>
+      <p>Currently based in <strong>Auckland, NZ</strong> — open to full-time roles and international freelance work.</p>
+      <div class="slabel" style="margin-top:1.75rem">Skills</div>
+      <div class="sk-list">
+        <div class="sk-row"><div class="sk-lbl"><span>UI Design & Figma</span><span>95%</span></div><div class="sk-bar"><div class="sk-fill" style="width:95%"></div></div></div>
+        <div class="sk-row"><div class="sk-lbl"><span>UX Research</span><span>85%</span></div><div class="sk-bar"><div class="sk-fill" style="width:85%"></div></div></div>
+        <div class="sk-row"><div class="sk-lbl"><span>Prototyping</span><span>90%</span></div><div class="sk-bar"><div class="sk-fill" style="width:90%"></div></div></div>
+        <div class="sk-row"><div class="sk-lbl"><span>Design Systems</span><span>80%</span></div><div class="sk-bar"><div class="sk-fill" style="width:80%"></div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="slabel">Tools</div>
+      <div class="tg">
+        <div class="tt"><span class="td"></span>Figma</div><div class="tt"><span class="td"></span>Adobe XD</div>
+        <div class="tt"><span class="td t"></span>Miro</div><div class="tt"><span class="td t"></span>Jira</div>
+        <div class="tt"><span class="td"></span>Photoshop</div><div class="tt"><span class="td"></span>Illustrator</div>
+        <div class="tt"><span class="td t"></span>Zeplin</div><div class="tt"><span class="td t"></span>Google Analytics</div>
+        <div class="tt"><span class="td"></span>Confluence</div><div class="tt"><span class="td t"></span>HTML / CSS</div>
+      </div>
+      <div class="slabel" style="margin-top:2rem">Education</div>
+      <div class="edu-cards">
+        <div class="edu-card"><div class="edu-name">Bachelor of Graphic Design</div><div class="edu-sub">2016 – 2018</div></div>
+        <div class="edu-card"><div class="edu-name">UI/UX — Tehran Technical Complex</div><div class="edu-sub">Certified Course</div></div>
+        <div class="edu-card"><div class="edu-name">Product Design — Snapp Mentor</div><div class="edu-sub">Certified Course</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="exp">
+  <div class="slabel">Experience</div>
+  <h2>Where I've worked.</h2>
+  <div class="exp-list">
+    <div class="ei">
+      <div class="edate">Sep 2024 – Present<br><span style="color:var(--teal);font-size:0.7rem">● Current</span></div>
+      <div><div class="eco">Freelance</div><div class="erol">Product & UI/UX Designer</div>
+        <ul class="ebl">
+          <li>Designed responsive eCommerce websites for Taaghche, Digiland, and Taherkhani</li>
+          <li>Managed full design process — discovery, wireframes, UI specs, developer handoff</li>
+          <li>Ensured brand consistency and cross-platform alignment for each client</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ei">
+      <div class="edate">Feb 2022 – Sep 2024</div>
+      <div><div class="eco">Mosbat Sabz</div><div class="erol">Senior Product Designer</div>
+        <ul class="ebl">
+          <li>Led full redesign of +SABZ eCommerce platform — reduced cart abandonment by 40%</li>
+          <li>Designed admin panel, warehouse inventory app, and online store end-to-end</li>
+          <li>Used Google Analytics for data-driven decisions; ran usability tests & user interviews</li>
+          <li>Coordinated sprints in Jira; created user flows and roadmaps in Miro</li>
+          <li>Delivered 32-page brand guidelines across all digital touchpoints</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ei">
+      <div class="edate">Nov 2019 – Dec 2021</div>
+      <div><div class="eco">Darukade</div><div class="erol">Junior Product Designer</div>
+        <ul class="ebl">
+          <li>Contributed to full site redesign of darukade.com — pharmaceutical eCommerce</li>
+          <li>Designed mobile-first UI for product listing, checkout, and order tracking</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ei">
+      <div class="edate">Aug 2008 – Sep 2019</div>
+      <div><div class="eco">Mahyadarou</div><div class="erol">Senior Graphic Designer & IT Support</div>
+        <ul class="ebl"><li>Developed brand visuals, marketing materials, and digital assets over 11 years</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="proj">
+  <div class="slabel">Selected work</div>
+  <h2>Projects I'm proud of.</h2>
+  <p style="font-size:0.85rem;color:var(--muted);margin-top:-1.5rem;margin-bottom:2rem;font-weight:300">Click any project to see the full case study.</p>
+
+  <div class="proj-grid">
+    <div class="proj-card" onclick="openModal('m1')">
+      <img class="proj-img" src="images/shop-multidevice.jpg" alt="Mosbat Sabz Shopping Platform"/>
+      <div class="proj-body">
+        <div class="proj-tag">eCommerce · Health & Wellness</div>
+        <div class="proj-name">Mosbat Sabz — Shopping Platform Redesign</div>
+        <div class="proj-role">Senior Product Designer · Figma, Adobe XD, Miro, Jira, Google Analytics</div>
+        <div class="proj-metrics">
+          <div><div class="mv">40%</div><div class="ml">Less abandonment</div></div>
+          <div><div class="mv">2-step</div><div class="ml">Checkout (was 4)</div></div>
+          <div><div class="mv">80pg</div><div class="ml">Design report</div></div>
+        </div>
+        <p class="proj-desc">Led the complete redesign of a pharmaceutical eCommerce platform — rebuilding the user journey from discovery to checkout, improving mobile UX, and integrating a new brand identity.</p>
+        <div class="proj-footer">
+          <div class="proj-tags"><span class="ptk">User Research</span><span class="ptk">Wireframing</span><span class="ptk">Prototyping</span><span class="ptk">Design System</span></div>
+          <span class="view-btn">View case study →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" onclick="openModal('m2')">
+      <img class="proj-img" src="images/admin-panel-overview.jpg" alt="Mosbat Sabz Admin Panel"/>
+      <div class="proj-body">
+        <div class="proj-tag">B2B · Admin System · Warehouse App</div>
+        <div class="proj-name">Mosbat Sabz — Admin Panel & Warehouse App</div>
+        <div class="proj-role">Senior Product Designer · Figma, Adobe XD, Google Analytics</div>
+        <div class="proj-metrics">
+          <div><div class="mv">3</div><div class="ml">Warehouse zones</div></div>
+          <div><div class="mv">5</div><div class="ml">UX challenges solved</div></div>
+        </div>
+        <p class="proj-desc">Designed a complex admin panel and custom warehouse inventory app with barcode system, role-based task visibility, and multi-zone management.</p>
+        <div class="proj-footer">
+          <div class="proj-tags"><span class="ptk">Information Architecture</span><span class="ptk">B2B UX</span><span class="ptk">Barcode System</span></div>
+          <span class="view-btn">View case study →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-grid-2">
+    <div class="proj-card" onclick="openModal('m3')">
+      <img class="proj-img" src="images/darukade.jpg" alt="Darukade"/>
+      <div class="proj-body">
+        <div class="proj-tag">eCommerce · Pharmaceutical</div>
+        <div class="proj-name">Darukade — Site Redesign</div>
+        <div class="proj-role">Junior Product Designer · Nov 2019 – Dec 2021</div>
+        <p class="proj-desc">Full redesign of darukade.com — mobile-first UI, product pages, and streamlined checkout.</p>
+        <div class="proj-footer">
+          <div class="proj-tags"><span class="ptk">UI Design</span><span class="ptk">Mobile UX</span></div>
+          <span class="view-btn">View details →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" onclick="openModal('m4')">
+      <img class="proj-img" src="images/taaghche.jpg" alt="Taaghche"/>
+      <div class="proj-body">
+        <div class="proj-tag">Freelance · Digital Books</div>
+        <div class="proj-name">Taaghche — Book Platform</div>
+        <div class="proj-role">Product Designer · 2024–Present</div>
+        <p class="proj-desc">Designed responsive UI for Iran's leading digital book and audiobook platform.</p>
+        <div class="proj-footer">
+          <div class="proj-tags"><span class="ptk">Responsive Design</span></div>
+          <span class="view-btn">View details →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" onclick="openModal('m5')">
+      <img class="proj-img" src="images/dgland.jpg" alt="DGland"/>
+      <div class="proj-body">
+        <div class="proj-tag">Freelance · Electronics</div>
+        <div class="proj-name">DGland — Electronics Marketplace</div>
+        <div class="proj-role">Product Designer · 2024–Present</div>
+        <p class="proj-desc">UI design for an electronics marketplace — filtering, comparison, and fast checkout.</p>
+        <div class="proj-footer">
+          <div class="proj-tags"><span class="ptk">UI Design</span><span class="ptk">eCommerce</span></div>
+          <span class="view-btn">View details →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" onclick="openModal('m6')">
+      <img class="proj-img" src="images/taherkhani.jpg" alt="Taherkhani Auto Parts"/>
+      <div class="proj-body">
+        <div class="proj-tag">Freelance · Automotive</div>
+        <div class="proj-name">Taherkhani — Auto Parts Store</div>
+        <div class="proj-role">Product Designer · 2024–Present</div>
+        <p class="proj-desc">Desktop and mobile UI for an automotive parts retailer with category navigation.</p>
+        <div class="proj-footer">
+          <div class="proj-tags"><span class="ptk">UI Design</span><span class="ptk">Mobile UX</span></div>
+          <span class="view-btn">View details →</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="proj-card" onclick="openModal('m7')" style="grid-column:1 / -1">
+      <img class="proj-img" src="images/tosan.jpg" alt="Tosan" style="height:240px"/>
+      <div class="proj-body">
+        <div class="proj-tag">Freelance · Automotive Parts Import</div>
+        <div class="proj-name">Tosan — Automotive Parts Store</div>
+        <div class="proj-role">Product Designer · 2024–Present</div>
+        <p class="proj-desc">Desktop and mobile UI for an automotive parts importer — clean product pages, category navigation, and dealership application flow.</p>
+        <div class="proj-footer">
+          <div class="proj-tags"><span class="ptk">UI Design</span><span class="ptk">Brand Identity</span></div>
+          <span class="view-btn">View details →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="slabel">How I work</div>
+  <h2>My design process.</h2>
+  <div class="ps">
+    <div class="pst"><div class="psn">01</div><div class="psname">Empathize</div><p class="psd">User interviews, surveys, and analytics — understanding real needs before touching a pixel.</p></div>
+    <div class="pst"><div class="psn">02</div><div class="psname">Define</div><p class="psd">Personas, pain points, and a clear problem statement that guides every decision.</p></div>
+    <div class="pst"><div class="psn">03</div><div class="psname">Ideate</div><p class="psd">User flows, information architecture, and low-fi wireframes explored in Miro.</p></div>
+    <div class="pst"><div class="psn">04</div><div class="psname">Design</div><p class="psd">High-fidelity UI in Figma — component-based design systems built to scale.</p></div>
+    <div class="pst"><div class="psn">05</div><div class="psname">Test & Ship</div><p class="psd">Usability testing, iteration, and clean handoff via Zeplin or Figma.</p></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="slabel" style="justify-content:center">Get in touch</div>
+  <div class="cbox">
+    <h2 class="ctitle">Let's build something great.</h2>
+    <p class="csub">Open to full-time roles in NZ, remote positions, and freelance projects worldwide.</p>
+    <div class="cls">
+      <a class="cl p" href="mailto:bahziaei@gmail.com">bahziaei@gmail.com</a>
+      <a class="cl" href="https://linkedin.com/in/bahareh-ziaei-ux" target="_blank">LinkedIn</a>
+      <a class="cl" href="https://dribbble.com/baha-z" target="_blank">Dribbble</a>
+    </div>
+    <p style="margin-top:1.25rem;font-size:0.75rem;color:var(--muted)">+64 22 679 0181 · Auckland, New Zealand</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Bahareh Ziaei — Product Designer</p>
+  <p><a href="mailto:bahziaei@gmail.com" style="color:var(--muted);text-decoration:none">bahziaei@gmail.com</a></p>
+</footer>
+
+<button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+
+<!-- MODAL 1: Shopping Platform -->
+<div class="modal-overlay" id="m1">
+<div class="modal">
+  <img class="modal-hero" src="images/shop-overview.jpg" alt="Mosbat Sabz Shopping Platform"/>
+  <div class="modal-body">
+    <div class="modal-tag">eCommerce · Health & Wellness</div>
+    <div class="modal-title">Mosbat Sabz — Shopping Platform Redesign</div>
+    <div class="modal-role">Senior Product Designer · Feb 2022 – Sep 2024 · Tools: Figma, Adobe XD, Miro, Jira, Google Analytics</div>
+    <a class="modal-live" href="https://mosbatesabz.com" target="_blank">Visit mosbatesabz.com</a>
+
+    <div class="cs-metrics">
+      <div><div class="cs-metric-val">40%</div><div class="cs-metric-lbl">Cart abandonment reduced</div></div>
+      <div><div class="cs-metric-val">2-step</div><div class="cs-metric-lbl">Checkout (was 4 steps)</div></div>
+      <div><div class="cs-metric-val">80pg</div><div class="cs-metric-lbl">Design documentation</div></div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Overview</div>
+      <p class="cs-text">+SABZ (Mosbat Sabz) is an online shopping platform specializing in cosmetic and pharmaceutical supplement sales. As the business scaled, the legacy website could no longer meet modern usability and scalability needs. My responsibility was to lead the redesign of the entire website.</p>
+    </div>
+
+    <div class="cs-grid">
+      <div class="cs-block">
+        <div class="cs-label">Problem</div>
+        <ul class="cs-ul">
+          <li>Complex navigation for users searching by health condition</li>
+          <li>Outdated interface inconsistent with the brand's new identity</li>
+          <li>Poor mobile experience leading to high bounce rates</li>
+          <li>Long 4-step checkout process increasing cart abandonment</li>
+        </ul>
+      </div>
+      <div class="cs-block">
+        <div class="cs-label">Research</div>
+        <ul class="cs-ul">
+          <li>Google Analytics: 60% of users left during checkout</li>
+          <li>Competitor analysis: iHerb, Sephora best practices</li>
+          <li>Two personas: Sara (32, health-conscious) & Nima (27, fitness-oriented)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Wireframes & User Flows</div>
+      <img class="cs-img" src="images/shop-wireframes-flow.jpg" alt="Wireframes and user flow diagrams"/>
+      <p class="cs-text">Detailed user flows and roadmaps designed in Miro, simplifying checkout from 4 steps to 2.</p>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">UI Design — Desktop & Mobile</div>
+      <img class="cs-img" src="images/shop-ui-design.jpg" alt="Final UI design"/>
+      <p class="cs-text">The home page was designed in Figma following flat design principles and the brand's color palette. Based on the MVP approach, non-essential content was removed to focus on core functionalities.</p>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Research Deep-Dive</div>
+      <img class="cs-img" src="images/shop-research.jpg" alt="Research and personas"/>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Solution & Process</div>
+      <img class="cs-img" src="images/shop-solution-process.jpg" alt="Solution and design process"/>
+      <ul class="cs-ul">
+        <li>Clean UI system with consistent grid and typography hierarchy</li>
+        <li>Simplified navigation: Shop by Category, Health Needs, Brands, Offers</li>
+        <li>Two-step checkout replacing the previous four-step process</li>
+        <li>Trust elements: verified badges, ratings, clear delivery info</li>
+      </ul>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Results</div>
+      <img class="cs-img" src="images/shop-results-reflection.jpg" alt="Results and reflection"/>
+      <ul class="cs-ul">
+        <li>40% reduction in cart abandonment rate</li>
+        <li>Improved mobile conversion rate after responsive optimization</li>
+        <li>Higher user retention due to simplified navigation</li>
+        <li>All steps documented in an 80-page web design report</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- MODAL 2: Admin Panel -->
+<div class="modal-overlay" id="m2">
+<div class="modal">
+  <img class="modal-hero" src="images/admin-panel-overview.jpg" alt="Mosbat Sabz Admin Panel"/>
+  <div class="modal-body">
+    <div class="modal-tag">B2B · Admin System · Warehouse App</div>
+    <div class="modal-title">Mosbat Sabz — Admin Panel & Warehouse App</div>
+    <div class="modal-role">Senior Product Designer · Feb 2022 – Sep 2024 · Tools: Figma, Adobe XD, Google Analytics</div>
+    <a class="modal-live" href="https://mosbatesabz.com" target="_blank">Visit mosbatesabz.com</a>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Overview</div>
+      <p class="cs-text">Mosbat Sabz needed a comprehensive admin panel and a custom warehouse app to streamline order collection and dispatch across multiple warehouse zones (cosmetics, pharmaceuticals, and supplements).</p>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Problem & Research</div>
+      <img class="cs-img" src="images/admin-problem-research.jpg" alt="Problem and research"/>
+      <p class="cs-text">Before this redesign, Mosbat Sabz's admin system lacked a unified structure. Most customer orders included items from at least two warehouses, all needing to be packed into a single shipment with zero tolerance for error.</p>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Solution & Process</div>
+      <img class="cs-img" src="images/admin-solution-process.jpg" alt="Solution and process"/>
+      <div class="cs-grid">
+        <div class="cs-block">
+          <div class="cs-label">Warehouse App</div>
+          <ul class="cs-ul">
+            <li>Warehouse separation in the database for better routing</li>
+            <li>User-based task visibility for each employee</li>
+            <li>Barcode system for faster, accurate picking</li>
+            <li>Partial fulfillment prevention</li>
+          </ul>
+        </div>
+        <div class="cs-block">
+          <div class="cs-label">Admin Panel</div>
+          <ul class="cs-ul">
+            <li>Admin Panel Design and Implementation</li>
+            <li>Shop Site Redesign and Implementation</li>
+            <li>Warehouse Device Design and Implementation</li>
+            <li>32-page brand guidelines document</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">UI Screens</div>
+      <img class="cs-img" src="images/admin-ui-screens.jpg" alt="Admin UI screens"/>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Warehouse App Design</div>
+      <img class="cs-img" src="images/warehouse-app.jpg" alt="Warehouse inventory app"/>
+    </div>
+
+    <div class="cs-section">
+      <div class="cs-section-title">Results & Reflection</div>
+      <img class="cs-img" src="images/admin-results-reflection.jpg" alt="Results and reflection"/>
+      <ul class="cs-ul">
+        <li>Improved visual consistency across the digital ecosystem</li>
+        <li>Internal team adopted the new system smoothly thanks to clear documentation</li>
+        <li>Warehouse operations became faster and more accurate</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- MODAL 3: Darukade -->
+<div class="modal-overlay" id="m3">
+<div class="modal">
+  <img class="modal-hero" src="images/darukade.jpg" alt="Darukade"/>
+  <div class="modal-body">
+    <div class="modal-tag">eCommerce · Pharmaceutical</div>
+    <div class="modal-title">Darukade — Site Redesign</div>
+    <div class="modal-role">Junior Product Designer · Nov 2019 – Dec 2021 · Tools: Figma, Adobe XD</div>
+    <a class="modal-live" href="https://darukade.com" target="_blank">Visit darukade.com</a>
+    <div class="cs-section">
+      <div class="cs-section-title">Overview</div>
+      <p class="cs-text">Darukade is a large pharmaceutical and cosmetics marketplace. As Junior Product Designer, I contributed to the full site redesign — focusing on mobile-first UI, product detail pages, checkout flow, and visual alignment with the updated brand identity.</p>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-title">My Contribution</div>
+      <ul class="cs-ul">
+        <li>Mobile-first UI design for product listing, detail, and cart pages</li>
+        <li>Streamlined checkout flow — reducing friction and improving conversion</li>
+        <li>Visual alignment with the brand's updated identity across all screens</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- MODAL 4: Taaghche -->
+<div class="modal-overlay" id="m4">
+<div class="modal">
+  <img class="modal-hero" src="images/taaghche.jpg" alt="Taaghche"/>
+  <div class="modal-body">
+    <div class="modal-tag">Freelance · Digital Books</div>
+    <div class="modal-title">Taaghche — Digital Book Platform</div>
+    <div class="modal-role">Product Designer · 2024–Present · Tools: Figma, Adobe XD</div>
+    <a class="modal-live" href="https://taaghche.com" target="_blank">Visit taaghche.com</a>
+    <div class="cs-section">
+      <div class="cs-section-title">Overview</div>
+      <p class="cs-text">Taaghche is Iran's leading digital book and audiobook platform. As a freelance product designer, I designed responsive UI improvements — focusing on product discovery, subscription flows, and cross-platform consistency.</p>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-title">Key Work</div>
+      <ul class="cs-ul">
+        <li>Responsive web and mobile UI design</li>
+        <li>Improved book discovery and category browsing</li>
+        <li>Subscription and referral flow design</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- MODAL 5: DGland -->
+<div class="modal-overlay" id="m5">
+<div class="modal">
+  <img class="modal-hero" src="images/dgland.jpg" alt="DGland"/>
+  <div class="modal-body">
+    <div class="modal-tag">Freelance · Electronics</div>
+    <div class="modal-title">DGland — Electronics Marketplace</div>
+    <div class="modal-role">Product Designer · 2024–Present · Tools: Figma, Adobe XD</div>
+    <a class="modal-live" href="https://dgland.com" target="_blank">Visit dgland.com</a>
+    <div class="cs-section">
+      <div class="cs-section-title">Overview</div>
+      <p class="cs-text">DGland is an electronics marketplace offering mobile phones, accessories, and tech products. I designed UI improvements for product listing, filtering, comparison, and the checkout experience.</p>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-title">Key Work</div>
+      <ul class="cs-ul">
+        <li>Product listing and filtering UI — by brand, category, price</li>
+        <li>Mobile-first cart and checkout flow</li>
+        <li>Full developer handoff documentation</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- MODAL 6: Taherkhani -->
+<div class="modal-overlay" id="m6">
+<div class="modal">
+  <img class="modal-hero" src="images/taherkhani.jpg" alt="Taherkhani"/>
+  <div class="modal-body">
+    <div class="modal-tag">Freelance · Automotive</div>
+    <div class="modal-title">Taherkhani — Auto Parts Store</div>
+    <div class="modal-role">Product Designer · 2024–Present · Tools: Figma, Adobe XD</div>
+    <div class="cs-section">
+      <div class="cs-section-title">Overview</div>
+      <p class="cs-text">Taherkhani is an automotive parts retailer. I designed desktop and mobile UI — including product catalog, category navigation, and a responsive layout aligned with the brand's bold visual identity.</p>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-title">Key Work</div>
+      <ul class="cs-ul">
+        <li>Desktop and mobile UI design — product pages and catalog</li>
+        <li>Category navigation for automotive part types</li>
+        <li>Responsive layout with mobile optimization</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- MODAL 7: Tosan -->
+<div class="modal-overlay" id="m7">
+<div class="modal">
+  <img class="modal-hero" src="images/tosan.jpg" alt="Tosan"/>
+  <div class="modal-body">
+    <div class="modal-tag">Freelance · Automotive Parts Import</div>
+    <div class="modal-title">Tosan — Automotive Parts Store</div>
+    <div class="modal-role">Product Designer · 2024–Present · Tools: Figma, Adobe XD</div>
+    <div class="cs-section">
+      <div class="cs-section-title">Overview</div>
+      <p class="cs-text">Tosan (P.Y.K. Tosan) is an importer and retailer of automotive parts. I designed the complete UI for desktop and mobile — including product catalog, category browsing, dealership application page, and a responsive layout aligned with the brand's bold visual identity.</p>
+    </div>
+    <div class="cs-section">
+      <div class="cs-section-title">Key Work</div>
+      <ul class="cs-ul">
+        <li>Desktop and mobile UI design — product pages and catalog</li>
+        <li>Dealership information and application flow</li>
+        <li>Brand-aligned visual design with bold color usage</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function openModal(id) {
+  document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('open'));
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('open'));
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeModal();
+  });
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
